@@ -1,0 +1,21 @@
+.policy {
+    padding: 20px;
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+    }
+    &__subtitle {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    &__text {
+        font-size: 16px;
+    }
+    &__point {
+        padding-left: 40px;
+        &-item {
+            font-size: 16px;
+            line-height: 32px;
+        }
+    }
+}
