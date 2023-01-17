@@ -1,14 +1,15 @@
 .promo {
     min-height: 100vh;
     position: relative;
-    background: url('../img/bg/Background.jpg') no-repeat 50%/cover;
+    background: url('../img/bg/bg.jpg') no-repeat 50%/cover;
     padding-top: 205px;
     &__title {
         width: 670px;
         margin-top: 10px;
     }
     &__btns {
-        margin-top: 25px;
+        margin-top: 45px;
+        height: 50px;
         width: 250px;
         font-weight: bold;
         display: flex;
@@ -23,10 +24,32 @@
         @include before_circle;
     }
     &__link {
+        padding: 10px;
         color: #000;
         text-decoration: none;
+        font-size: 20px;
+        height: 100%;
+        line-height: 33px;
         &:hover {
+            background: $main-color;
+            text-align: center;
             color: #000;
+            transition: 0.6s ease;
+            box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
+        }
+    }
+
+    &__lang {
+        position: absolute;
+        top: 20px;
+        left: 40px;
+
+        button {                
+            width: 25px;
+            height: 25px;
+            font-size: 14px;
+
+            background: 'none';
         }
     }
 }
