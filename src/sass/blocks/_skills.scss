@@ -58,9 +58,21 @@
             span {
                 display: block;
                 height: 100%;
+                width: 0;
                 background-color: $main-color;
                 border-radius: 4px;
             }
         }
     }
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+}
+
+.anim {
+    animation-name: grow;
+    animation-duration: 3s;
 }

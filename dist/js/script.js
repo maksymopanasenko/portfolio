@@ -19,12 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // progress bar
-
     const counters = document.querySelectorAll('.skills__ratings-counter'),
-        lines = document.querySelectorAll('.skills__ratings-line span');
+          lines = document.querySelectorAll('.skills__ratings-line span');
 
-    counters.forEach( (item, i) => {
-        lines[i].style.width = item.innerHTML;
+    window.addEventListener('scroll', () => {
+        if (document.documentElement.scrollTop > 2800) {
+
+            counters.forEach( (item, i) => {
+                lines[i].style.width = item.innerHTML;
+                lines[i].classList.add('anim');
+            });
+        }
     });
 
 
@@ -152,6 +157,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bindPostData(form);
 
+
+
+
+
+
+    // lang 
+
+    const langTrigger = document.querySelector('.promo__lang'),
+          langButton = langTrigger.querySelector('button');
+    
+    const langParametersEng = {
+        0: 'About me',
+        1: 'Experience',
+        2: 'Skills',
+        3: 'Projects',
+        4: 'Price-list',
+        5: 'Contact',
+        6: 'PL',
+    }
+
+
+    const langParametersPol = {
+        0: 'O mnie',
+        1: 'Doświadczenie',
+        2: 'Umiejętności',
+        3: 'Projekty',
+        4: 'Cennik',
+        5: 'Kontakt',
+        6: 'EN',
+    }
+
+    langTrigger.addEventListener('click', (e) => {
+        langButton.classList.toggle('eng');
+        const all = document.querySelectorAll('.all');
+            
+        if (e.target.className == 'all eng' && e.target.nodeName == 'BUTTON') {
+            
+            all.forEach((item, i) => {
+                item.innerHTML = langParametersEng[i];
+            });
+        } else {
+            all.forEach((item, i) => {
+                item.innerHTML = langParametersPol[i];
+            });
+        }
+    })
 
 
 

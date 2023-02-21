@@ -57,29 +57,22 @@
     &__link {
         position: relative;
         font-weight: 700;
-        font-size: 24px;
+        font-size: 28px;
         line-height: 36px;
         margin-bottom: 15px;
-        &:before {
-            content: "";
-            position: absolute;
-            left: -35px;
-            top: 10px;
-            width: 15px;
-            height: 15px;
-            border-radius: 100%;
-            border: 1px solid #000;
-            transition: all .4s;
-        }
+        text-shadow: 0 2px 5px black;
+        transition: all .5s;
         &:hover {
-            transform: scale(1.02);  // my correction
-            &::before {
-                background-color: #fff;
-            }
+            transform: scale(1.03);
         }
         a {
             color: #fff;
             text-decoration: none;
+            transition: all .5s;
+            &:hover {
+                color: #dddddd;
+                text-shadow: 0 2px 5px black, 0 2px 5px rgb(72, 72, 72);
+            }
         }
     }
     &__social {
