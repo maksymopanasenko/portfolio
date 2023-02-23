@@ -43,13 +43,15 @@
         position: absolute;
         top: 20px;
         left: 40px;
+        width: 30px;
+        height: 30px;
 
         button {                
-            width: 25px;
-            height: 25px;
+            width: 100%;
+            color: #fff;
+            text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
             font-size: 14px;
-
-            background: 'none';
+            background: url('../../icons/poland.png') center no-repeat;
         }
     }
 }
