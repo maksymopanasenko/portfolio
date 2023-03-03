@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button class="modal__btn">Ok</button>
                         </div>
                     `;
+                    document.querySelector('.modal__btn').addEventListener('click', () => thanks.remove());
                 })
                 .finally(() => {
                     form.reset();
