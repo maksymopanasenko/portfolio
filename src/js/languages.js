@@ -321,5 +321,5 @@ function changPageLanguage(langParam, icon) {
       item.innerHTML = langParam[i];
     });
 
-    langButton.style.background = `url('../../icons/${icon}.png') center center/cover no-repeat`;
+    langButton.style.background = `url('icons/${icon}.png') center center/cover no-repeat`;
 }

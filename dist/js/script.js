@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             throw new Error(`Couldn't fetch ${url}, status: ${response.status}`);
         }
 
-        return await response.json();
+        return response.text();
     }
 
     const form = document.querySelector('form');
@@ -143,10 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             const jsonData = JSON.stringify(Object.fromEntries(formData.entries()));
 
-            postData('http://localhost:3000/requests', jsonData)
-                .then(data => {
-                    console.log(data);
-                    
+            postData('/', jsonData)
+                .then(() => {                    
                     thanks.innerHTML = `
                         <div class="modal__window">
                             <div class="modal__content">
@@ -159,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                 })
                 .catch(() => {
-                    
                     thanks.innerHTML = `
                         <div class="modal__window">
                             <div class="modal__content">
@@ -191,8 +188,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     
-
-
-
 
 });

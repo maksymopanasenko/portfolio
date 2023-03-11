@@ -1,10 +1,10 @@
 {
-  "name": "heart_rate_monitors",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-      "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,9 +20,5 @@
     "gulp-sass": "^5.1.0",
     "json-server": "^0.17.1",
     "sass": "^1.55.0"
-  },
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.18.2"
   }
 }
