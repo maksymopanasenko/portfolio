@@ -144,7 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const jsonData = JSON.stringify(Object.fromEntries(formData.entries()));
 
             postData('/', jsonData)
-                .then(() => {                    
+            .then(response => { 
+                console.log(response);
+                  
                     thanks.innerHTML = `
                         <div class="modal__window">
                             <div class="modal__content">
