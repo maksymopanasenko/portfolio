@@ -147,42 +147,48 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => { 
                 console.log(response);
                   
-                    thanks.innerHTML = `
-                        <div class="modal__window">
-                            <div class="modal__content">
-                                <h2 class="modal__content__title title title_fz36">${message.success}</h2>
-                                <p class="modal__content__text">Skontaktuję się z tobą w ciągu najbliższych 24 godzin.</p>
-                                <p class="modal__content__text">I will contact you within the next 24 hours.</p>
-                            </div>
-                            <button class="modal__btn">Ok</button>
+                thanks.innerHTML = `
+                    <div class="modal__window">
+                        <div class="modal__content">
+                            <h2 class="modal__content__title title title_fz36">${message.success}</h2>
+                            <p class="modal__content__text">Skontaktuję się z tobą w ciągu najbliższych 24 godzin.</p>
+                            <p class="modal__content__text">I will contact you within the next 24 hours.</p>
                         </div>
-                    `;
-                })
-                .catch(() => {
-                    thanks.innerHTML = `
-                        <div class="modal__window">
-                            <div class="modal__content">
-                                <h2 class="modal__content__title title title_fz36">${message.failurePol}</h2>
-                                <h2 class="modal__content__title title title_fz36">${message.failureEng}</h2>
-                                <div class="divider"></div>
-                                <p class="modal__content__text">Serdecznie przepraszam, ale na tą chwilę nie ma możliwości skorzystać z tego kanału komunikacji.</p>
-                                <p class="modal__content__text">I sincerely apologize, but at the moment it is not possible to use this communication channel.</p>
-                            </div>
-                            <button class="modal__btn">Ok</button>
+                        <button class="modal__btn">Ok</button>
+                    </div>
+                `;
+
+                closeModal(thanks);
+            }).catch(() => {
+                thanks.innerHTML = `
+                    <div class="modal__window">
+                        <div class="modal__content">
+                            <h2 class="modal__content__title title title_fz36">${message.failurePol}</h2>
+                            <h2 class="modal__content__title title title_fz36">${message.failureEng}</h2>
+                            <div class="divider"></div>
+                            <p class="modal__content__text">Serdecznie przepraszam, ale na tą chwilę nie ma możliwości skorzystać z tego kanału komunikacji.</p>
+                            <p class="modal__content__text">I sincerely apologize, but at the moment it is not possible to use this communication channel.</p>
                         </div>
-                    `;
-                    document.querySelector('.modal__btn').addEventListener('click', () => thanks.remove());
-                })
-                .finally(() => {
-                    form.reset();
-                    const deleteMessage = setTimeout(() => {
-                        thanks.remove();
-                    }, 7000);
-                });
+                        <button class="modal__btn">Ok</button>
+                    </div>
+                `;
+
+                closeModal(thanks);
+            }).finally(() => {
+                form.reset();
+                // const deleteMessage = setTimeout(() => {
+                //     thanks.remove();
+                // }, 7000);
+            });
         });
     }
 
     bindPostData(form);
+
+
+    function closeModal(modal) {
+        document.querySelector('.modal__btn').addEventListener('click', () => modal.remove());
+    }
 
 
 

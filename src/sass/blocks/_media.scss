@@ -132,8 +132,18 @@
             grid-template: 45px 45px 190px 90px/1fr;
         }
         &__triggers {
-            grid-template: repeat(2,45px)/1fr;
-            column-gap: unset;
+            position: relative;
+        }
+        &__btn {
+            position: absolute;            
+            width: 70%;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &__policy {
+            position: absolute;
+            top: 0;
         }
     }
 }
@@ -234,6 +244,13 @@
         }
         &__social {
             bottom: 20px;
+        }
+    }
+
+    .modal {
+        &__window {
+            width: 80%;
+            margin: 0 auto;
         }
     }
 }
@@ -337,6 +354,25 @@
         }
         .divider {
             margin-top: 15px;
+        }
+    }
+
+    .modal {
+        &__window {
+            min-height: 250px;
+        }
+        &__content {
+            &__title {
+                font-size: 16px;
+                line-height: 26px;
+            }
+            &__text {
+                margin-top: 22px;                            
+                font-size: 11px;
+            }
+        }
+        &__btn {            
+            margin: 25px auto 0 auto;
         }
     }
     
