@@ -57,6 +57,11 @@ async function handleRequest(request, response) {
             text: `Name: ${body.name}, E-mail: ${body.email}, Message: ${body.text}`
         };
 
+        response.setHeader('Content-Type', 'text/html; charset=utf-8');
+        response.setHeader('Access-Control-Allow-Origin', '*');
+        response.setHeader('Access-Control-Allow-Headers', 'POST, GET, DELETE, OPTIONS, key');
+        response.setHeader('Access-Control-Allow-Methods', 'POST, GET, DELETE, OPTIONS');
+
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
                 console.log(error);
