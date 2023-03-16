@@ -100,6 +100,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // links pending
+
+    const links = document.querySelectorAll('.portfolio__item_active');
+    
+    const modal = document.createElement('div');
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            const lang = document.querySelector('.promo__lang button');
+
+            modal.classList.add('modal');
+            
+            if (lang.classList.contains('eng')) {
+                modal.innerHTML = `
+                    <div class="modal__window">
+                        <div class="modal__content">
+                            <h2 class="modal__content__title title title_fz36">Link is in progress</h2>
+                            <p class="modal__content__text">Please wait, sometimes it may take even a few minutes.<br/>
+                                It depends on the speed of the external resource.</p>
+                            <p class="modal__content__text">Thank you for your patience.</p>
+                            <img src="icons/contact/spin.svg" class="img img_link"/>
+                        </div>
+                    </div>
+                `;
+            } else {
+                modal.innerHTML = `
+                <div class="modal__window">
+                    <div class="modal__content">
+                        <h2 class="modal__content__title title title_fz36">Połączenie jest w toku</h2>
+                        <p class="modal__content__text">Proszę czekać, czasami może to potrwać nawet kilka minut.<br/>
+                            Zależy to od szybkości zasobu zewnętrznego.</p>
+                        <p class="modal__content__text">Dziękuję za Twoją cierpliwość.</p>
+                        <img src="icons/contact/spin.svg" class="img img_link"/>
+                    </div>
+                </div>
+            `;
+            }
+            
+
+            document.body.insertAdjacentElement('beforeend', modal);
+        });
+    });
+
+    window.onunload = function() {
+        return;
+    };
 
 
     // server
