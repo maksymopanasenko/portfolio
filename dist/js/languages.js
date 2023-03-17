@@ -3,7 +3,9 @@
 // lang 
 
 const langTrigger = document.querySelector('.promo__lang'),
-langButton = langTrigger.querySelector('button');
+      langButton = langTrigger.querySelector('button');
+
+const all = document.querySelectorAll('.all');
 
 const langParametersEng = [
     'About me',
@@ -155,24 +157,28 @@ const langParametersPol = [
     'Zgadzam się z <a href="/policy.html">polityką prywatności'
 ];
 
-const all = document.querySelectorAll('.all');
+
+if (localStorage.getItem('lang') == 'all') {
+    changePageLanguage(langParametersPol, 'poland');
+} else {
+    changePageLanguage(langParametersEng, 'uk');
+    langButton.classList.toggle('eng');
+}
 
 langTrigger.addEventListener('click', (e) => {
     langButton.classList.toggle('eng');
               
     if (e.target.className == 'all eng' && e.target.nodeName == 'BUTTON') {
-      changPageLanguage(langParametersEng, 'uk');
+        changePageLanguage(langParametersEng, 'uk');
+        localStorage.setItem('lang', langButton.classList.value);
     } else {
-      changPageLanguage(langParametersPol, 'poland');
+        changePageLanguage(langParametersPol, 'poland');
+        localStorage.setItem('lang', langButton.classList.value);
     }
 });
 
-changPageLanguage(langParametersPol, 'poland');
-
-function changPageLanguage(langParam, icon) {
-    all.forEach((item, i) => {
-      item.innerHTML = langParam[i];
-    });
+function changePageLanguage(langParam, icon) {
+    all.forEach((item, i) => item.innerHTML = langParam[i]);
 
     langButton.style.background = `url('icons/${icon}.png') center center/cover no-repeat`;
 }

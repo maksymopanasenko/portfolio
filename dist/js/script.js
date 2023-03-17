@@ -137,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             }
-            
 
             document.body.insertAdjacentElement('beforeend', modal);
         });
