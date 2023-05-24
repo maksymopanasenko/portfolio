@@ -105,7 +105,10 @@
             grid-auto-rows: 280px;
             justify-content: space-around;
             row-gap: 35px;
-            .horizontal, .vertical {
+            .horizontal,
+            .vertical,
+            .horizontal_start,
+            .horizontal_end {
                 grid-row: unset;
                 grid-column: unset;
             }
@@ -177,6 +180,9 @@
         }
         &__photo {
             grid-row: unset;
+            img {
+                object-position: 0 25%;
+            }
         }
         &__skills {
             grid-template: repeat(2,minmax(115px,auto)) / repeat(2,260px);
@@ -200,7 +206,7 @@
         &__wrapper {
             padding: 0;
             justify-content: center;
-            grid-template-columns: repeat(auto-fit, 270px);
+            grid-template-columns: repeat(auto-fit, 260px);
             gap: 20px;
         }
         &__ratings {
@@ -214,6 +220,11 @@
         padding-top: 40px;
         &__wrapper {
             margin-top: 40px;
+            grid-template-rows: repeat(3, 260px);
+            grid-template-columns: repeat(auto-fit, 260px);
+            grid-auto-rows: 260px;
+            justify-content: space-around;
+            row-gap: 20px;
         }
     }
     .price-list {
@@ -225,8 +236,13 @@
     .contact {
         padding: 40px 0 50px 0;
         &__wrapper {
-            grid-template: 300px auto / 1fr;
+            grid-template: 360px auto / 1fr;
             row-gap: 40px;
+        }
+        &__photo {
+            img {
+                object-position: 0 2%;
+            }
         }
     }
     .menu {
@@ -299,7 +315,7 @@
             width: 250px;
         }
         &__title {
-            width: 300px;
+            width: 290px;
             margin-top: 20px;
             &_fz36 {
                 font-size: 24px;
