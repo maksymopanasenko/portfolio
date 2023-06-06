@@ -14,7 +14,7 @@ const langParametersEng = [
     'Projects',
     'Price-list',
     'Contact',
-    'EN',
+    'PL',
     'My name is Maksym Opanasenko',
     "I'm a web-developer from Wroclaw",
     'About me',
@@ -89,7 +89,7 @@ const langParametersPol = [
     'Projekty',
     'Cennik',
     'Kontakt',
-    'PL',
+    'EN',
     'Nazywam się Maksym Opanasenko',
     'Jestem web-deweloperem z Wrocławia',
     'O mnie',
@@ -159,9 +159,9 @@ const langParametersPol = [
 
 
 if (localStorage.getItem('lang') == 'all') {
-    changePageLanguage(langParametersPol, 'poland');
+    changePageLanguage(langParametersPol, 'uk');
 } else {
-    changePageLanguage(langParametersEng, 'uk');
+    changePageLanguage(langParametersEng, 'poland');
     langButton.classList.toggle('eng');
 }
 
@@ -169,10 +169,10 @@ langTrigger.addEventListener('click', (e) => {
     langButton.classList.toggle('eng');
               
     if (e.target.className == 'all eng' && e.target.nodeName == 'BUTTON') {
-        changePageLanguage(langParametersEng, 'uk');
+        changePageLanguage(langParametersEng, 'poland');
         localStorage.setItem('lang', langButton.classList.value);
     } else {
-        changePageLanguage(langParametersPol, 'poland');
+        changePageLanguage(langParametersPol, 'uk');
         localStorage.setItem('lang', langButton.classList.value);
     }
 });
