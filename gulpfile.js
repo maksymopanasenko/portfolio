@@ -59,6 +59,7 @@ gulp.task('fonts', function () {
 
 gulp.task('icons', function () {
     return gulp.src("src/icons/**/*")
+    .pipe(imagemin())
     .pipe(gulp.dest("dist/icons"))
     .pipe(browserSync.stream());
 });

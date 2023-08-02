@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // mouse hover
 
     const activeHoveredElem = document.querySelectorAll('.portfolio__item_active'),
-          undefinedHoveredElem = document.querySelector('.portfolio__item_undefined');
+          undefinedHoveredElems = document.querySelectorAll('.portfolio__item_undefined');
 
 
     activeHoveredElem.forEach(item => {
@@ -60,40 +60,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2 part
 
-    undefinedHoveredElem.addEventListener('mouseenter', (e) => {
-        const newElem = document.createElement('div');
-        const image = e.target.querySelector('img');
-
-        const lang = document.querySelector('.promo__lang button');
-        
-        image.style.display = 'none';
-        newElem.classList.add('show', 'portfolio__item__overlay');
-
-        if (lang.classList.contains('eng')) {
+    undefinedHoveredElems.forEach(elem => {
+        elem.addEventListener('mouseenter', (e) => {
+            const newElem = document.createElement('div');
+            const image = e.target.querySelector('img');
+    
+            const lang = document.querySelector('.promo__lang button');
             
-            newElem.innerHTML = `
-                Your project could be here
-                <a href="#contact">
-                    <button class="portfolio__item__btn">Free quote</button>
-                </a>
-            `;
-        } else {
-            newElem.innerHTML = `
-                Tutaj może być twój projekt
-                <a href="#contact">
-                    <button class="portfolio__item__btn">Darmowa wycena</button>
-                </a>
-            `;
-        }
-
-        e.target.append(newElem);
+            image.style.display = 'none';
+            newElem.classList.add('show', 'portfolio__item__overlay');
+    
+            if (lang.classList.contains('eng')) {
+                
+                newElem.innerHTML = `
+                    Your project could be here
+                    <a href="#contact">
+                        <button class="portfolio__item__btn">Free quote</button>
+                    </a>
+                `;
+            } else {
+                newElem.innerHTML = `
+                    Tutaj może być twój projekt
+                    <a href="#contact">
+                        <button class="portfolio__item__btn">Darmowa wycena</button>
+                    </a>
+                `;
+            }
+    
+            e.target.append(newElem);
+        });
     });
 
-    undefinedHoveredElem.addEventListener('mouseleave', (e) => {
-        const image = e.target.querySelector('img');
+    undefinedHoveredElems.forEach(elem => {
+        elem.addEventListener('mouseleave', (e) => {
+            const image = e.target.querySelector('img');
 
-        image.style.display = 'block';
-        e.target.lastElementChild.remove();
+            image.style.display = 'block';
+            e.target.lastElementChild.remove();
+        });
     });
 
     // links pending
@@ -231,6 +235,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.modal__btn').addEventListener('click', () => modal.remove());
     }
 
+    const gallery = document.querySelector('.portfolio__gallery');
+    const galleryBtns = document.querySelectorAll('.portfolio__control-btn');
+    galleryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.classList.contains('portfolio__control-btn_left')) {
+                gallery.style.left = 0;
+            } else {
+                gallery.style.left = -100 + '%';
+            }
+        });
+    })
 
 
 
