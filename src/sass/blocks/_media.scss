@@ -99,12 +99,21 @@
         }
     }
     .portfolio {
+        &__gallery {
+            flex-direction: column-reverse;
+            width: 100%;
+        }
         &__wrapper {
-            grid-template-rows: repeat(3, 280px);
+            width: 100%;
             grid-template-columns: repeat(auto-fit, 280px);
+            grid-template-rows: 280px;
             grid-auto-rows: 280px;
             justify-content: space-around;
             row-gap: 35px;
+            &:last-child {
+                margin-bottom: 35px;
+            }
+
             .horizontal,
             .vertical,
             .horizontal_start,
@@ -112,6 +121,22 @@
                 grid-row: unset;
                 grid-column: unset;
             }
+        }
+        &__item {
+            &_undefined {
+                &:not(.primary) {
+                    display: none;
+                }
+            }
+        }
+        &__control-btn {
+            display: none;
+        }
+
+        
+        .lower,
+        .upper {
+            display: block;
         }
     }
     .price-list {
@@ -218,13 +243,17 @@
     }
     .portfolio {
         padding-top: 40px;
-        &__wrapper {
+        &__gallery {
             margin-top: 40px;
-            grid-template-rows: repeat(3, 260px);
+        }
+        &__wrapper {
             grid-template-columns: repeat(auto-fit, 260px);
+            grid-template-rows: 260px;
             grid-auto-rows: 260px;
-            justify-content: space-around;
             row-gap: 20px;
+            &:last-child {
+                margin-bottom: 20px;
+            }
         }
     }
     .price-list {
