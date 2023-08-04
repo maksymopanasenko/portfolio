@@ -113,6 +113,13 @@
             &:last-child {
                 margin-bottom: 35px;
             }
+            &:first-child {
+                .portfolio__item {
+                    &:nth-child(5) {
+                        order: 1;
+                    }
+                }
+            }
 
             .horizontal,
             .vertical,
@@ -132,7 +139,6 @@
         &__control-btn {
             display: none;
         }
-
         
         .lower,
         .upper {
