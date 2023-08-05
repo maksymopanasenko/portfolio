@@ -3,7 +3,7 @@
     &__wrapper {
         padding: 60px 50px 0 50px;
         display: grid;
-        grid-template: repeat(3, minmax(44px, auto)) / repeat(2, 380px);
+        grid-template: repeat(3, minmax(44px, auto)) / repeat(2, 396px);
         justify-content: space-between;
         row-gap: 15px;
         
@@ -12,7 +12,7 @@
         display: grid;
         grid-template: repeat(2, minmax(18px, auto)) / repeat(2, auto);
         justify-content: space-between;
-        align-content: space-between;
+        row-gap: 5px;
         &-title {
             position: relative;
             padding-left: 25px;

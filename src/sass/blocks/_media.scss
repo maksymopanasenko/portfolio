@@ -194,13 +194,13 @@
             font-size: 24px;
         }
     }
-    .promo {        
-        text-shadow: 0 0 3px white, 0 0 3px white;
-        background: url('../img/bg/bg.jpg') no-repeat 65%/cover;
+    .promo {
+        background-position: 65%;
         padding-top: 40vh;
+        text-shadow: 0 0 3px white, 0 0 3px white;
         &__title {
             line-height: 44px;
-            width: 450px;
+            max-width: 440px;
             font-size: 31px;
         }
     }
