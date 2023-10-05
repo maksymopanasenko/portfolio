@@ -11,7 +11,7 @@
     .promo {
         &__title {
             font-size: 42px;
-            width: 584px;
+            max-width: 584px;
         }
     }
     .about {
@@ -60,10 +60,11 @@
         max-width: 720px;
     }
     .promo {
+        min-height: auto;
         &__title {
             font-size: 33px;
             line-height: 48px;
-            width: 470px;
+            max-width: 470px;
         }
     }
     .about {
@@ -313,7 +314,7 @@
     }   
     .title {
         &_fz48 {
-            font-size: 26px;          
+            font-size: 27px;          
         }
         &_fz36 {
             font-size: 24px;
@@ -350,7 +351,7 @@
             width: 250px;
         }
         &__title {
-            width: 290px;
+            max-width: 100%;
             margin-top: 20px;
             &_fz36 {
                 font-size: 24px;
